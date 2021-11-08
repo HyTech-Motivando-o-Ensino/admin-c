@@ -1,0 +1,1 @@
+char creatAdminArchive(struct Queue *queue);
