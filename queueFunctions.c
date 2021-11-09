@@ -9,7 +9,7 @@ struct Queue{
 };
 
 struct element{
-	char operation [100];
+	char operation [200];
 	struct element *next;
 };
 
@@ -36,7 +36,7 @@ void insert(struct Queue *queue, char *operation)
 char *pop(struct Queue *queue)
 {
 	struct element *out;
-	char info[100];
+	char info[200];
 
 	if (queue->start == NULL) {
 		queue->end = NULL;

@@ -10,14 +10,14 @@ struct Queue{
 };
 
 struct element{
-	char operation [100];
+	char operation [200];
 	struct element *next;
 };
 
-char creatAdminArchive(struct Queue *queue)
+void creatAdminArchive(struct Queue *queue)
 {
         FILE *archiveAdmin;
-        char text[100];
+        char text[200];
         archiveAdmin = fopen("adminArchive.sql", "a");
 
         while (queue->start != NULL) {

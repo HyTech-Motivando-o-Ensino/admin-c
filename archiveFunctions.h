@@ -1,1 +1,1 @@
-char creatAdminArchive(struct Queue *queue);
+void creatAdminArchive(struct Queue *queue);
