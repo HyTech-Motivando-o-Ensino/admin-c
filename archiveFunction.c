@@ -17,12 +17,11 @@ struct element{
 void creatAdminArchive(struct Queue *queue)
 {
         FILE *archiveAdmin;
-        char text[200];
         archiveAdmin = fopen("adminArchive.sql", "a");
 
         while (queue->start != NULL) {
-                strcpy(text,pop(queue));
-                fprintf(archiveAdmin, "%s\n", text);
+                fprintf(archiveAdmin, "%s\n", queue->start->operation);
+                pop(queue);
         }
 
         fclose(archiveAdmin);

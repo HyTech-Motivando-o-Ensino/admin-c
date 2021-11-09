@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct Queue{
 	struct element *start;
@@ -9,22 +9,20 @@ struct Queue{
 };
 
 struct element{
-	char operation [200];
+	char operation[200];
 	struct element *next;
 };
 
 void insert(struct Queue *queue, char *operation)
 {
-
 	struct element *new;
 	new = malloc(sizeof(struct element));
-
 	new->next = NULL;
 	strcpy(new->operation,operation);
 
 	if (queue->start == NULL) {
+                queue->start = new;
 		queue->end = new;
-		queue->start = new;
 		queue->size = queue->size + 1;
 	} else {
 		queue->end->next = new;
@@ -33,10 +31,9 @@ void insert(struct Queue *queue, char *operation)
 	}
 }
 
-char *pop(struct Queue *queue)
+void *pop(struct Queue *queue)
 {
 	struct element *out;
-	char info[200];
 
 	if (queue->start == NULL) {
 		queue->end = NULL;
@@ -46,7 +43,5 @@ char *pop(struct Queue *queue)
 	queue->start = out->next;
 	queue->size = queue->size - 1;
 
-	strcpy(info, out->operation);
 	free(out);
-	return info;
 }

@@ -1,7 +1,7 @@
-#include "queueFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "queueFunctions.h"
 
 void insertCourse(struct Queue *queue)
 {
@@ -45,7 +45,7 @@ void insertCourse(struct Queue *queue)
         strcat(operation, type);
         strcat(operation, "\"");
         strcat(operation, ")");
-
+        
         insert(queue, operation);
 }
 
@@ -87,50 +87,7 @@ void insertClass(struct Queue *queue)
 }
 
 
-void insertProfCourse(struct Queue *queue, int courseId, char *professor_id)
-{       
-        char course_id[10];
 
-        sprintf(course_id, "%d", courseId);
-
-        char operation[200];
-        strcpy(operation, "INSERT INTO 'professor_course' (id,professor_id,course_id) VALUES (");
-        strcat(operation, "NULL");
-        strcat(operation, ",");
-        strcat(operation, "\"");
-        strcat(operation, professor_id);
-        strcat(operation, "\"");
-        strcat(operation, ",");
-        strcat(operation, "\"");
-        strcat(operation, course_id);
-        strcat(operation, "\"");
-        strcat(operation, ")");
-
-        insert(queue, operation);
-}
-
-
-void insertProfSubject(struct Queue *queue, int subjectId, char *professor_id)
-{
-        char subject_id[10];
-
-        sprintf(subject_id, "%d", subjectId);
-
-        char operation[200];
-        strcpy(operation, "INSERT INTO 'professor_class' (id,professor_id,subject_id) VALUES (");
-        strcat(operation, "NULL");
-        strcat(operation, ",");
-        strcat(operation, "\"");
-        strcat(operation, professor_id);
-        strcat(operation, "\"");
-        strcat(operation, ",");
-        strcat(operation, "\"");
-        strcat(operation, subject_id);
-        strcat(operation, "\"");
-        strcat(operation, ")");
-
-        insert(queue, operation);
-}
 
 
 void insertProfessor(struct Queue *queue)
@@ -220,6 +177,50 @@ void insertProfessor(struct Queue *queue)
         }
 }
 
+void insertProfCourse(struct Queue *queue, int courseId, char *professor_id)
+{       
+        char course_id[10];
+
+        sprintf(course_id, "%d", courseId);
+
+        char operation[200];
+        strcpy(operation, "INSERT INTO 'professor_course' (id,professor_id,course_id) VALUES (");
+        strcat(operation, "NULL");
+        strcat(operation, ",");
+        strcat(operation, "\"");
+        strcat(operation, professor_id);
+        strcat(operation, "\"");
+        strcat(operation, ",");
+        strcat(operation, "\"");
+        strcat(operation, course_id);
+        strcat(operation, "\"");
+        strcat(operation, ")");
+
+        insert(queue, operation);
+}
+
+
+void insertProfSubject(struct Queue *queue, int subjectId, char *professor_id)
+{
+        char subject_id[10];
+
+        sprintf(subject_id, "%d", subjectId);
+
+        char operation[200];
+        strcpy(operation, "INSERT INTO 'professor_class' (id,professor_id,subject_id) VALUES (");
+        strcat(operation, "NULL");
+        strcat(operation, ",");
+        strcat(operation, "\"");
+        strcat(operation, professor_id);
+        strcat(operation, "\"");
+        strcat(operation, ",");
+        strcat(operation, "\"");
+        strcat(operation, subject_id);
+        strcat(operation, "\"");
+        strcat(operation, ")");
+
+        insert(queue, operation);
+}
 
 void insertSubject(struct Queue *queue)
 {

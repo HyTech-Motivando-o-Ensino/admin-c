@@ -1,0 +1,8 @@
+INSERT INTO 'courses' (id,name,periods,type) VALUES (NULL,"design","8","1")
+INSERT INTO 'courses' (id,name,periods,type) VALUES (NULL,"Ciencia da Computacao","8","1")
+INSERT INTO 'class' (id,course_id,period,zoom_id) VALUES (NULL,"1","2","http//zoom.cesar.school/password="pedroseugostoso"")
+INSERT INTO 'subjects' (id,name,period) VALUES (NULL,"Algortimos e Estrutura de dados","2")
+INSERT INTO 'professor' (id,name,slack,email,whatsapp,contact) VALUES (NULL,"Victor Hazin","AED-2021","vh@cesar.school","8199601088","1")
+INSERT INTO 'professor_course' (id,professor_id,course_id) VALUES (NULL,"1","1")
+INSERT INTO 'professor_class' (id,professor_id,subject_id) VALUES (NULL,"1","1")
+INSERT INTO 'classroom_code' (id,subject_id,class_id,classroom_id) VALUES (NULL,"1","1","aed5534")

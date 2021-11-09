@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "insertOptions.h"
-#include "archiveFunctions.h"
+#include "archiveFunction.h"
 
 struct Queue{
 	struct element *start;
@@ -10,7 +11,7 @@ struct Queue{
 };
 
 struct element{
-	char operation [200];
+	char operation[200];
 	struct element *next;
 };
 
@@ -20,6 +21,9 @@ int main(void)
 	struct Queue *queue;
 
     	queue = malloc(sizeof(struct Queue));
+        
+        queue->start = NULL;
+        queue->end = NULL;
 
 	while (option != 6) {
 
@@ -51,7 +55,8 @@ int main(void)
 		} else if (option == 5) {
 			insertClassroomCode(queue);
 		}
-	}
 
-	creatAdminArchive(queue);
+	}
+	
+        creatAdminArchive(queue);
 }
