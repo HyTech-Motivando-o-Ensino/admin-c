@@ -15,7 +15,7 @@ struct element{
 	struct element *next;
 };
 
-int main(void)
+void main(void)
 {
 	int option;
 	struct Queue *queue;
