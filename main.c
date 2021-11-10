@@ -29,8 +29,8 @@ void main(void)
 
 		printf("\n\n#===========MENU==========#");
 		printf("\n  1 - Inserir Curso       ");
-		printf("\n  2 - Inserir Professor   ");
-		printf("\n  3 - Inserir Disciplina  ");
+		printf("\n  2 - Inserir Disciplina  ");
+		printf("\n  3 - Inserir Professor   ");
 		printf("\n  4 - Inserir Turma       ");
 		printf("\n  5 - Inserir Classroom   ");
 		printf("\n  6 - Sair                ");
@@ -47,9 +47,9 @@ void main(void)
 		if (option == 1) {
 			insertCourse(queue);
 		} else if (option == 2) {
-			insertProfessor(queue);
-		} else if (option == 3) {
 			insertSubject(queue);
+		} else if (option == 3) {
+			insertProfessor(queue);
 		} else if (option == 4) {
 			insertClass(queue);
 		} else if (option == 5) {
