@@ -27,7 +27,7 @@ void insertCourse(char *name, char *timeCourseAmount, char *type, char *operatio
 }
 
 
-char *insertClass(char *courseId, char *period, char *link)
+void insertClass(char *courseId, char *period, char *link, char *operation_test)
 {
         
         char operation[200];
@@ -48,11 +48,11 @@ char *insertClass(char *courseId, char *period, char *link)
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
+        strcpy(operation_test, operation);
 }
 
 
-char *insertProfessor(char *slack, char *name, char *email, char *whatsapp, char *favoriteContact, char *professorId)
+void insertProfessor(char *slack, char *name, char *email, char *whatsapp, char *favoriteContact, char *professorId, char *operation_test)
 {
 
         char operation[200];
@@ -81,12 +81,11 @@ char *insertProfessor(char *slack, char *name, char *email, char *whatsapp, char
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
-        
+        strcpy(operation_test, operation); 
 }
 
 
-char *insertProfCourse(int courseId, char *professor_id)
+void insertProfCourse(int courseId, char *professor_id, char *operation_test)
 {       
         char course_id[10];
 
@@ -106,11 +105,11 @@ char *insertProfCourse(int courseId, char *professor_id)
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
+        strcpy(operation_test, operation);
 }
 
 
-char *insertProfSubject(int subjectId, char *professor_id)
+void insertProfSubject(int subjectId, char *professor_id, char *operation_test)
 {
         char subject_id[10];
         sprintf(subject_id, "%d", subjectId);
@@ -129,11 +128,11 @@ char *insertProfSubject(int subjectId, char *professor_id)
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
+        strcpy(operation_test, operation);
 }
 
 
-char *insertSubject(char *name, char *period)
+void insertSubject(char *name, char *period, char *operation_test)
 {
 
         char operation[200];
@@ -150,11 +149,11 @@ char *insertSubject(char *name, char *period)
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
+        strcpy(operation_test, operation);
 }
 
 
-char *insertClassroomCode(char *subjectId, char *classId, char *classroomId)
+void insertClassroomCode(char *subjectId, char *classId, char *classroomId, char *operation_test)
 {
 
         char operation[200];
@@ -175,5 +174,5 @@ char *insertClassroomCode(char *subjectId, char *classId, char *classroomId)
         strcat(operation, ")");
         strcat(operation, ";");
 
-        return operation;
+        strcpy(operation_test, operation);
 }
