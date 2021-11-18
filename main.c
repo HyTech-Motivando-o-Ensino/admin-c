@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "insertOptions.h"
-#include "archiveFunction.h"
+#include "librarys/insertOptions.h"
+#include "librarys/archiveFunction.h"
 
 struct Queue{
 	struct element *start;
