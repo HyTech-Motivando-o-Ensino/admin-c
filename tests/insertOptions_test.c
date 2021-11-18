@@ -12,8 +12,13 @@ void tearDown(){}
 void test_insertCourse(){
 
         char operation_test[200];
-        insertCourse("Ciencia da Computacao", "6", "1", operation_test);
+        //TEST 1
+        insertCourse("Ciencia da Computacao", "8", "1", operation_test);
         TEST_ASSERT_EQUAL_STRING("INSERT INTO `courses` (`id`,`name`,`periods`,`type`) VALUES (NULL,'Ciencia da Computacao','8','1');", operation_test);
+
+        //TEST 2
+        insertCourse("Desing", "8", "1", operation_test);
+        TEST_ASSERT_EQUAL_STRING("INSERT INTO `courses` (`id`,`name`,`periods`,`type`) VALUES (NULL,'Desing','8','1');", operation_test);
 }
 
 int main(void) {
