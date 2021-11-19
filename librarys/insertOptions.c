@@ -88,16 +88,12 @@ void insertClass(struct Queue *queue)
         insert(queue, operation);
 }
 
-
-
-
-
 void insertProfessor(struct Queue *queue)
 {
         //id, name, slack, email, whatsapp, favoriteContact
 
-        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[3];
-        int  courseAmount, subjectAmount;
+        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10];
+        int  courseAmount, subjectAmount, periodAmount;
 
         printf("\n\n#=============Inserir Professor============#");
         printf("\n  Nome? ");
@@ -139,6 +135,15 @@ void insertProfessor(struct Queue *queue)
                 printf("  Id disciplina %d: ", i);
                 scanf("%d", &subjectsId[i-1]);
         }
+
+        printf("  Ensina em quantos periodos? ");
+        scanf("%d", &periodAmount);
+
+        int periods[periodAmount];
+        for (int i = 1; i <= periodAmount; i++) {
+                printf("  Periodo %d: ", i);
+                scanf("%d", &periods[i-1]);
+        }
         printf("#==========================================#");
 
         char operation[200];
@@ -178,6 +183,34 @@ void insertProfessor(struct Queue *queue)
         for (int i = 0; i < subjectAmount; i++) {
                 insertProfSubject(queue, subjectsId[i], professorId);
         }
+
+        //Inserir na tabela que relaciona o professor aos períodos que ele ensina
+        for (int i = 0; i < periodAmount; i++) {
+                insertProfPeriods(queue, professorId, periods[i]);
+        }
+}
+
+void insertProfPeriods(struct Queue *queue, char *professorId, int period)
+{
+        char period_char[3];
+
+        sprintf(period_char,"%d",period);
+
+        char operation[200];
+        strcpy(operation, "INSERT INTO `professor_periods` (`id`,`professor_id`,`periods`) VALUES (");
+        strcat(operation,"NULL");
+        strcat(operation,",");
+        strcat(operation, "\'");
+        strcat(operation,professorId);
+        strcat(operation, "\'");
+        strcat(operation,",");
+        strcat(operation, "\'");
+        strcat(operation,period_char);
+        strcat(operation, "\'");
+        strcat(operation,")");
+        strcat(operation,";");
+
+        insert(queue, operation);
 }
 
 void insertProfCourse(struct Queue *queue, int courseId, char *professor_id)

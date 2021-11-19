@@ -26,6 +26,6 @@ void creatAdminArchive(struct Queue *queue)
 
         fclose(archiveAdmin);
 
-        printf("\n=====Arquivo Criado Com Sucesso=====");
-        printf("\n=======Nome: adminArchive.sql=======");
+        printf("\n\n#=====Arquivo Criado Com Sucesso=====#");
+        printf("\n#=======Nome: adminArchive.sql=======#");
 }
