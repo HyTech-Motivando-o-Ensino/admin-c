@@ -37,13 +37,9 @@ void insertCourse(struct Queue *queue)
         strcat(operation, name);
         strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, timeCourseAmount);
-        strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, type);
-        strcat(operation, "\'");
         strcat(operation, ")");
         strcat(operation, ";");
         
@@ -71,13 +67,9 @@ void insertClass(struct Queue *queue)
         strcpy(operation, "INSERT INTO `class` (`id`,`course_id`,`period`,`zoom_id`) VALUES (");
         strcat(operation, "NULL");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, courseId);
-        strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, period);
-        strcat(operation, "\'");
         strcat(operation, ",");
         strcat(operation, "\'");
         strcat(operation, link);
@@ -166,9 +158,7 @@ void insertProfessor(struct Queue *queue)
         strcat(operation, whatsapp);
         strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, favoriteContact);
-        strcat(operation, "\'");
         strcat(operation, ")");
         strcat(operation, ";");
 
@@ -200,13 +190,9 @@ void insertProfPeriods(struct Queue *queue, char *professorId, int period)
         strcpy(operation, "INSERT INTO `professor_periods` (`id`,`professor_id`,`periods`) VALUES (");
         strcat(operation,"NULL");
         strcat(operation,",");
-        strcat(operation, "\'");
         strcat(operation,professorId);
-        strcat(operation, "\'");
         strcat(operation,",");
-        strcat(operation, "\'");
         strcat(operation,period_char);
-        strcat(operation, "\'");
         strcat(operation,")");
         strcat(operation,";");
 
@@ -223,13 +209,9 @@ void insertProfCourse(struct Queue *queue, int courseId, char *professor_id)
         strcpy(operation, "INSERT INTO `professor_course` (`id`,`professor_id`,`course_id`) VALUES (");
         strcat(operation, "NULL");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, professor_id);
-        strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, course_id);
-        strcat(operation, "\'");
         strcat(operation, ")");
         strcat(operation, ";");
 
@@ -247,13 +229,9 @@ void insertProfSubject(struct Queue *queue, int subjectId, char *professor_id)
         strcpy(operation, "INSERT INTO `professor_class` (`id`,`professor_id`,`subject_id`) VALUES (");
         strcat(operation, "NULL");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, professor_id);
-        strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, subject_id);
-        strcat(operation, "\'");
         strcat(operation, ")");
         strcat(operation, ";");
 
@@ -281,9 +259,7 @@ void insertSubject(struct Queue *queue)
         strcat(operation, name);
         strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, period);
-        strcat(operation, "\'");
         strcat(operation, ")");
         strcat(operation, ";");
 
@@ -308,13 +284,9 @@ void insertClassroomCode(struct Queue *queue)
         strcpy(operation, "INSERT INTO `classroom_code` (`id`,`subject_id`,`class_id`,`classroom_id`) VALUES (");
         strcat(operation, "NULL");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, subjectId);
-        strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
         strcat(operation, classId);
-        strcat(operation, "\'");
         strcat(operation, ",");
         strcat(operation, "\'");
         strcat(operation, classroomId);
