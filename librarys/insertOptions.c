@@ -84,7 +84,7 @@ void insertProfessor(struct Queue *queue)
 {
         //id, name, slack, email, whatsapp, favoriteContact
 
-        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10];
+        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10], other[255];
         int  courseAmount, subjectAmount, periodAmount;
 
         printf("\n\n#=============Inserir Professor============#");
@@ -102,12 +102,18 @@ void insertProfessor(struct Queue *queue)
         printf("\n  1 - Slack ");
         printf("\n  2 - Email ");
         printf("\n  3 - Whatsapp ");
+        printf("\n  4 - Outro ");
         printf("\n  Opcao: ");
         scanf("%s", favoriteContact);
-        while (atoi(favoriteContact) < 1 || atoi(favoriteContact) > 3) {
+        while (atoi(favoriteContact) < 1 || atoi(favoriteContact) > 4) {
                 printf("\n  Error - Opcao Invalida");
                 printf("\n  Opcao: ");
                 scanf("%s", favoriteContact);
+        }
+
+        if (atoi(favoriteContact) == 4) {
+                printf("  Outro: ");
+                scanf("%s", other);
         }
 
         printf("  Esta em quantos cursos? ");
@@ -139,7 +145,7 @@ void insertProfessor(struct Queue *queue)
         printf("#==========================================#");
 
         char operation[200];
-        strcpy(operation, "INSERT INTO `professor` (`id`,`name`,`slack`,`email`,`whatsapp`,`contact`) VALUES (");
+        strcpy(operation, "INSERT INTO `professor` (`id`,`name`,`slack`,`email`,`whatsapp`,`other`,`favorite`) VALUES (");
         strcat(operation, "NULL");
         strcat(operation, ",");
         strcat(operation, "\'");
@@ -156,6 +162,10 @@ void insertProfessor(struct Queue *queue)
         strcat(operation, ",");
         strcat(operation, "\'");
         strcat(operation, whatsapp);
+        strcat(operation, "\'");
+        strcat(operation, ",");
+        strcat(operation, "\'");
+        strcat(operation, other);
         strcat(operation, "\'");
         strcat(operation, ",");
         strcat(operation, favoriteContact);
