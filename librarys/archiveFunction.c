@@ -17,7 +17,7 @@ struct element{
 void creatAdminArchive(struct Queue *queue)
 {
         FILE *archiveAdmin;
-        archiveAdmin = fopen("adminArchive.sql", "a");
+        archiveAdmin = fopen("adminArchive.sql", "w");
 
         while (queue->start != NULL) {
                 fprintf(archiveAdmin, "%s\n", queue->start->operation);
