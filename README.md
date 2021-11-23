@@ -8,19 +8,15 @@
 - [Mac](#para-mac)
 
 # Para Windows
->## Instalando do projeto
+>## Instalando o projeto
 
-### 🟤?
+### 🟤Clone nosso repositório backend usando o git bash
 ```Python
-git clone <https://github.com/HyTech-Motivando-o-Ensino/hytech-backend.git>
+git clone <https://github.com/HyTech-Motivando-o-Ensino/admin-c.git>
 ```
-
->## Rodando o projeto novamente
-
-### 🟤?
-```Python
-source venv/Scripts/activate
-```
+`OBS: É necessário ter instalado o git, acesse em: https://git-scm.com/downloads`
+### 🟤Abra no arquivo *main* e insira seus dados
+### 🟤Abra no arquivo *adminArchive* para acessar seus dados seus dados
 
 # Para Linux
 ###### (Em breve!)
