@@ -82,7 +82,6 @@ void insertClass(struct Queue *queue)
 
 void insertProfessor(struct Queue *queue)
 {
-        //id, name, slack, email, whatsapp, favoriteContact
 
         char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10], other[255];
         int  courseAmount, subjectAmount, periodAmount;
