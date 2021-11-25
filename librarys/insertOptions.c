@@ -14,6 +14,11 @@ void insertCourse(struct Queue *queue)
         scanf(" %[^\n]", name);
         printf("  Quantos periodos tem o curso? ");
         scanf(" %s", timeCourseAmount);
+        while (atoi(timeCourseAmount)<1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Quantos periodos tem o curso? ");
+                scanf(" %s", timeCourseAmount);
+        }
         printf("  Qual o tipo?");
         printf("\n  1 - Graduacao");
         printf("\n  2 - Mestrado");
@@ -56,8 +61,18 @@ void insertClass(struct Queue *queue)
         printf("\n\n#=============Inserir Turma============#");
         printf("\n  Qual o id do curso? ");
         scanf("%s", courseId);
+        while (atoi(courseId) < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Qual o id do curso? ");
+                scanf(" %s", courseId);
+        }
         printf("  Qual o periodo da turma? ");
         scanf("%s", period);
+        while (atoi(period) < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Qual o periodo da turma? ");
+                scanf(" %s", period);
+        }
         printf("  Qual o link do zoom da turma? ");
         scanf("%s", link);
         printf("#======================================#");
@@ -83,7 +98,7 @@ void insertClass(struct Queue *queue)
 void insertProfessor(struct Queue *queue)
 {
 
-        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10], other[255];
+        char slack[255], name[255], email[255], whatsapp[255], favoriteContact[3], professorId[10], other[255] = "NULL";
         int  courseAmount, subjectAmount, periodAmount;
 
         printf("\n\n#=============Inserir Professor============#");
@@ -91,6 +106,11 @@ void insertProfessor(struct Queue *queue)
         scanf(" %[^\n]", name);
         printf("  Seu id? ");
         scanf("%s", professorId);
+        while (atoi(professorId) < 1) {
+                printf("\n  Entrada - Opcao Invalida");
+                printf("\n  Seu id? ");
+                scanf(" %s", professorId);
+        }
         printf("  Slack? ");
         scanf("%s", slack);
         printf("  Email? ");
@@ -117,29 +137,59 @@ void insertProfessor(struct Queue *queue)
 
         printf("  Esta em quantos cursos? ");
         scanf("%d", &courseAmount);
+        while (courseAmount < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Esta em quantos cursos? ");
+                scanf("%d", &courseAmount);
+        }
 
         int coursesId[courseAmount];
         for (int i = 1; i <= courseAmount; i++) {
                 printf("  Id curso %d: ", i);
                 scanf("%d", &coursesId[i-1]);
+                while (coursesId[i-1] < 1) {
+                        printf("\n  Error - Entrada Invalida");
+                        printf("\n  Id curso %d: ", i);
+                        scanf("%d", &coursesId[i-1]);
+                }
         }
 
         printf("  Ensina quantas disciplinas? ");
         scanf("%d", &subjectAmount);
+        while (subjectAmount < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Ensina quantas disciplinas? ");
+                scanf("%d", &subjectAmount);
+        }
 
         int subjectsId[subjectAmount];
         for (int i = 1; i <= subjectAmount; i++) {
                 printf("  Id disciplina %d: ", i);
                 scanf("%d", &subjectsId[i-1]);
+                while (subjectsId[i-1] < 1) {
+                        printf("\n  Entrada - Opcao Invalida");
+                        printf("\n  Id disciplina %d: ", i);
+                        scanf("%d", &subjectsId[i-1]);
+                }
         }
 
         printf("  Ensina em quantos periodos? ");
         scanf("%d", &periodAmount);
+        while (periodAmount< 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Ensina em quantos periodos? ");
+                scanf("%d", &periodAmount);
+        }
 
         int periods[periodAmount];
         for (int i = 1; i <= periodAmount; i++) {
                 printf("  Periodo %d: ", i);
                 scanf("%d", &periods[i-1]);
+                while (periods[i-1] < 1) {
+                        printf("\n  Error - Entrada Invalida");
+                        printf("\n  Periodo %d: ", i);
+                        scanf("%d", &periods[i-1]);
+                }
         }
         printf("#==========================================#");
 
@@ -163,9 +213,13 @@ void insertProfessor(struct Queue *queue)
         strcat(operation, whatsapp);
         strcat(operation, "\'");
         strcat(operation, ",");
-        strcat(operation, "\'");
-        strcat(operation, other);
-        strcat(operation, "\'");
+        if (!strcmp("NULL",other)) {
+                strcat(operation, other);     
+        } else {
+                strcat(operation, "\'");
+                strcat(operation, other);
+                strcat(operation, "\'");
+        }
         strcat(operation, ",");
         strcat(operation, favoriteContact);
         strcat(operation, ")");
@@ -258,6 +312,11 @@ void insertSubject(struct Queue *queue)
         scanf(" %[^\n]", name);
         printf("  Qual o periodo da disciplina? ");
         scanf("%s", period);
+        while (atoi(period) < 1) {
+                printf("\n  Error - Opcao Invalida");
+                printf("\n  Qual o periodo da disciplina? ");
+                scanf("%s", period);
+        }
         printf("#===========================================#");
 
         char operation[200];
@@ -283,8 +342,20 @@ void insertClassroomCode(struct Queue *queue)
         printf("\n\n#=============Inserir Classroom============#");
         printf("\n  Qual o ID da disciplina? ");
         scanf("%s", subjectId);
+        while (atoi(subjectId) < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Qual o ID da disciplina? ");
+                scanf("%s", subjectId);
+        }
+
         printf("  Qual o ID da turma? ");
         scanf("%s", classId);
+        while (atoi(classId) < 1) {
+                printf("\n  Error - Entrada Invalida");
+                printf("\n  Qual o ID da turma? ");
+                scanf("%s", classId);
+        }
+
         printf("  Qual o ID do classroom? ");
         scanf("%s", classroomId);
         printf("#==========================================#");
