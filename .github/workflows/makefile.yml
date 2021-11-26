@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Go to tests
-      run: cd ../../tests
+      run: cd tests
     - name: Build and Test
-      run: ./Makefile
+      run: ./insertOptions_test.exe
       
