@@ -14,5 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build and test
-      run: ./Makefile
+    - name: Build
+      run: gcc -o tests/insertOptions_test tests/insertOptions_test.c tests/Unity/unity.c tests/testFunctions/insertOptions.c
+    
+    - name: Test
+      run: tests/insertOptions_test.exe
