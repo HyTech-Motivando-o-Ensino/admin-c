@@ -19,7 +19,7 @@ void test_insertCourse()
 
         //TEST 2
         insertCourse("Desing", "8", "1", operation_test);
-        TEST_ASSERT_EQUAL_STRING("INSERT INTO `courses` (`id`,`name`,`periods`,`type`) VALUES (NULL,'Desing',8,1);", operation_test);
+        TEST_ASSERT_EQUAL_STRING("NSERT INTO `courses` (`id`,`name`,`periods`,`type`) VALUES (NULL,'Desing',8,1);", operation_test);
 }
 
 void test_insertClass()
