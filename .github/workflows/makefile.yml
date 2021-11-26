@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Go to tests
+      run: cd tests
+    - name: ls_test
       run: ls
     - name: Build
       run: gcc -o insertOptions_test insertOptions_test.c Unity/unity.c testFunctions/insertOptions.c
