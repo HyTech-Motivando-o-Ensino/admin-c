@@ -16,5 +16,5 @@ jobs:
     - name: Go to tests
       run: cd tests
     - name: Build and Test
-      run: make
+      run: ./Makefile
       
