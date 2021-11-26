@@ -9,12 +9,14 @@ on:
 jobs:
   build-and-test:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Go to tests
       run: cd tests
-    - name: Build and Test
+    - name: Build
+      run: gcc -o insertOptions_test insertOptions_test.c Unity/unity.c testFunctions/insertOptions.c
+    - name: Test
       run: ./insertOptions_test.exe
       
