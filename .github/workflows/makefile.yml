@@ -14,8 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build
+    - name: Build InsertOptions_test
       run: gcc -o tests/insertOptions_test tests/insertOptions_test.c tests/Unity/unity.c tests/testFunctions/insertOptions.c
     
-    - name: Test
+    - name: Test InsertOptions
       run: tests/insertOptions_test.exe
+
+    - name: Build queueFunctions_test 
+      run: gcc -o tests/queueFunctions_test tests/queueFunctions_test.c tests/Unity/unity.c tests/testFunctions/queueFunctions.c
+    
+    - name: Test queueFnctions
+      run: ttests/queueFunctions_test.exe
