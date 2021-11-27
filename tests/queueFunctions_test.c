@@ -33,7 +33,7 @@ void tearDown(){};
 //TESTS
 void test_amount()
 {	
-	TEST_ASSERT_EQUAL(3,queue->size);
+	TEST_ASSERT_EQUAL(2,queue->size);
 }
 
 void test_empty()
