@@ -25,7 +25,7 @@ void test_creatAdminArchive()
         fgets(archive_text,255,test_archiveAdmin);
 
         fclose(test_archiveAdmin);
-        TEST_ASSERT_EQUAL_STRING("Test01\n",archive_text);
+        TEST_ASSERT_EQUAL_STRING("Test00\n",archive_text);
 }
 
 int main(void) 
