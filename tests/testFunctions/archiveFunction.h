@@ -1,0 +1,1 @@
+void creatAdminArchive(char *text);

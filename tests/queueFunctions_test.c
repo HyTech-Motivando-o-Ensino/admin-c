@@ -27,8 +27,10 @@ void setUp(){
 	insert(queue,"test2");
 };
 
+
 //EXECUTADA DEPOIS DE TODOS OS TESTES
 void tearDown(){};
+
 
 //TESTS
 void test_amount()
